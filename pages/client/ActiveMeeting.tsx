@@ -159,7 +159,7 @@ export default function ActiveMeeting() {
             <span className="text-[11px] font-black uppercase tracking-widest">Encerrar</span>
           </button>
         </div>
-      </header>
+      </footer>
 
       {/* Tech Background Detail */}
       <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-[#19C37D]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
