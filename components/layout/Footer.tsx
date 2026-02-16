@@ -11,13 +11,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-20 mb-32">
           <div className="md:col-span-5">
             <div className="flex items-center gap-4 mb-10">
-              <div className="w-10 h-10 bg-[#19C37D] flex items-center justify-center rounded-sm">
-                <span className="font-black text-black text-xl">T</span>
-              </div>
-              <span className="text-3xl font-black tracking-tighter uppercase">TechLabs</span>
+              <img src="/Logo_Dresbach.png" alt="DRESBACH HOSTING" className="h-12 w-auto" />
             </div>
             <p className="text-[#6B6B6B] text-[11px] font-mono uppercase tracking-[0.4em] max-w-sm mb-12 leading-loose">
-              Engineering elite ecosystems. <br />
+              High-Performance Web Hosting. <br />
               International Headquarters: Toronto, CA.
             </p>
             <div className="flex items-center gap-6">
@@ -62,7 +59,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-20 border-t border-[#2F2F2F] flex flex-col lg:flex-row justify-between items-center gap-12 relative">
-          <span className="text-[10px] font-bold text-[#6B6B6B] uppercase tracking-[0.5em]">© 2024 TechLabs Technical Consulting | Dresbach Group International Operations.</span>
+          <span className="text-[10px] font-bold text-[#6B6B6B] uppercase tracking-[0.5em]">© 2026 DRESBACH HOSTING | Dresbach Group International Operations.</span>
           <div className="flex items-center gap-12">
             <span className="flex items-center gap-4 text-[10px] font-black text-[#6B6B6B] uppercase tracking-[0.4em]"><ShieldCheck size={14} className="text-[#19C37D]" /> ISO 27001 SECURE</span>
             <span className="flex items-center gap-4 text-[10px] font-black text-[#6B6B6B] uppercase tracking-[0.4em]"><ShieldCheck size={14} className="text-[#19C37D]" /> SOC2 COMPLIANT</span>

@@ -24,10 +24,8 @@ export default function ClientSidebar() {
   return (
     <aside className="w-72 bg-white border-r border-slate-200 flex flex-col fixed h-full z-20 hidden lg:flex">
       <div className="p-8 flex items-center gap-3">
-        <div className="w-9 h-9 bg-[#19C37D] rounded-lg flex items-center justify-center shadow-lg shadow-[#19C37D]/20">
-          <Layers className="text-white w-5 h-5" />
-        </div>
-        <span className="font-bold text-2xl tracking-tight text-slate-900">TechLabs</span>
+        <img src="/Logo_Dresbach.png" alt="DRESBACH HOSTING" className="h-10 w-auto" />
+        <span className="font-bold text-2xl tracking-tight text-slate-900">DRESBACH HOSTING</span>
       </div>
 
       <nav className="mt-6 flex-1 px-4 space-y-1">

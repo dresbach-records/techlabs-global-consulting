@@ -67,14 +67,7 @@ export default function StartConsultation() {
       {/* Header / Branding */}
       <header className="relative z-10 w-full pt-16 pb-8 flex justify-center">
         <div className="flex flex-col items-center">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-[#19c27c] rounded-lg flex items-center justify-center shadow-lg shadow-[#19c27c]/20">
-              <ShieldCheck className="text-white w-6 h-6" />
-            </div>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900">
-              TechLabs
-            </h1>
-          </div>
+        <img src="/Logo_Dresbach.png" alt="DRESBACH HOSTING" className="h-12 w-auto mb-4" />
           <p className="text-[10px] uppercase tracking-[0.4em] text-slate-400 font-bold">
             by Dresbach Group Canada
           </p>
@@ -322,7 +315,7 @@ export default function StartConsultation() {
             <button className="hover:text-[#19c27c] transition-colors uppercase tracking-widest">Suporte Técnico</button>
           </div>
           <p className="text-[10px] text-slate-300/50 mt-4 font-medium">
-            © 2024 TechLabs. Todos os direitos reservados.
+            © 2026 DRESBACH HOSTING. Todos os direitos reservados.
           </p>
         </div>
       </footer>

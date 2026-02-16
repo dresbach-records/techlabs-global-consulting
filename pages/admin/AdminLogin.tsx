@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Terminal, Key, BadgeCheck, LogIn, ShieldAlert } from 'lucide-react';
+import { Key, BadgeCheck, LogIn, ShieldAlert } from 'lucide-react';
 
 export default function AdminLogin() {
   const [isLoading, setIsLoading] = useState(false);
@@ -49,10 +49,8 @@ export default function AdminLogin() {
 
       <div className="w-full max-w-[420px] relative z-10">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-[#2F2F2F] border border-[#19C37D]/20 rounded-lg mb-4 shadow-[0_0_20px_rgba(25,195,125,0.05)]">
-            <Terminal size={32} className="text-[#19C37D]" />
-          </div>
-          <h1 className="text-xl font-bold tracking-tighter text-white uppercase italic">TechLabs</h1>
+            <img src="/Logo_Dresbach.png" alt="DRESBACH HOSTING" className="h-12 w-auto mx-auto mb-4" />
+          <h1 className="text-xl font-bold tracking-tighter text-white uppercase italic">DRESBACH HOSTING</h1>
           <p className="text-[10px] text-slate-500 mt-1 uppercase tracking-[0.2em]">Dresbach Group Canada • Admin Terminal</p>
         </div>
 
@@ -77,7 +75,7 @@ export default function AdminLogin() {
                   <input 
                     required
                     className="w-full bg-[#111111]/50 border border-white/10 rounded-lg py-3 pl-10 pr-4 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-[#19C37D]/50 transition-all font-mono" 
-                    placeholder="admin@techlabs.ca" 
+                    placeholder="admin@dresbachhosting.com" 
                     type="text"
                   />
                 </div>

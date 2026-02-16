@@ -13,7 +13,8 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Expertise', path: 'expertise' },
   { label: 'Ecossistema', path: 'ecosystem' },
   { label: 'Clientes', path: 'clients' },
-  { label: 'Sobre', path: 'about' }
+  { label: 'Sobre', path: 'about' },
+  { label: 'Catálogo', path: 'https://catalogo-dresbach-hosting.vercel.app/' }
 ];
 
 export const SERVICES: ServiceCardProps[] = [

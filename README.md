@@ -1,24 +1,23 @@
-# TechLabs — Global Technical Consulting
+# DRESBACH HOSTING — Global Web Hosting
 
-Enterprise institutional website for **TechLabs**, the technical consulting and software engineering brand of the **Dresbach Group (Canada)**.
+Enterprise institutional website for **DRESBACH HOSTING**, the web hosting and cloud services brand of the **Dresbach Group (Canada)**.
 
-This project represents a global, enterprise-level technology consulting firm, focused on architecture, scalability, cloud strategy, AI systems and governance-driven engineering.
+This project represents a global, enterprise-level hosting provider, focused on performance, scalability, and security.
 
 ---
 
-## 🏢 About TechLabs
+## 🏢 About DRESBACH HOSTING
 
-**TechLabs** operates as the strategic and technical intelligence unit of the Dresbach Group, delivering:
+**DRESBACH HOSTING** operates as the web hosting and cloud services unit of the Dresbach Group, delivering:
 
-- Technical consulting
-- Software architecture
-- Cloud strategy
-- AI scaling
-- Systems design
-- Technology audits
-- Enterprise governance & compliance support
+- High-Performance Web Hosting
+- Scalable Cloud Servers
+- Domain Name Registration
+- SSL Certificates
+- Enterprise-Grade Hosting Solutions
+- 24/7 Technical Support
 
-TechLabs works alongside other Dresbach Group brands such as CodeForge, Dresbach Hosting, Dresbach Hosting CA, Studio Builder AI and Novos Horizonte.
+DRESBACH HOSTING works alongside other Dresbach Group brands such as CodeForge, Dresbach Hosting CA, Studio Builder AI and Novos Horizonte.
 
 ---
 
@@ -149,7 +148,7 @@ This repository is intended to serve as:
 
 Corporate website
 
-Consulting landing platform
+Hosting services platform
 
 Institutional presentation
 
@@ -169,9 +168,9 @@ Security
 
 Compliance
 
-Aligned with enterprise and international consulting standards.
+Aligned with enterprise and international hosting standards.
 
 📄 License
 
 Private / Proprietary
-© Dresbach Group — All rights reserved.# techlabs-global-consulting
+© Dresbach Group — All rights reserved.# dresbach-hosting
