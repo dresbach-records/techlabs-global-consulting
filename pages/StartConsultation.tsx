@@ -20,6 +20,7 @@ export default function StartConsultation() {
   const [mode, setMode] = useState<AuthMode>('login');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showMaintenancePopup, setShowMaintenancePopup] = useState(false);
   const navigate = useNavigate();
 
   const handleBackToLogin = (e: React.MouseEvent) => {
@@ -27,29 +28,28 @@ export default function StartConsultation() {
     setMode('login');
   };
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleAuthAction = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    
-    // Simulando um delay de autenticação técnica
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate('/client/dashboard');
-    }, 1200);
-  };
-
-  const handleRegister = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      setMode('login');
-      alert("Conta criada com sucesso. Por favor, faça login.");
-    }, 1500);
+    setShowMaintenancePopup(true);
   };
 
   return (
     <div className="min-h-screen bg-[#f6f8f7] flex flex-col font-display antialiased relative overflow-hidden">
+      {showMaintenancePopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50 animate-in fade-in duration-300">
+          <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-md w-full text-center border">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Sistema em Manutenção</h2>
+            <p className="text-slate-500 mb-8">O sistema está temporariamente indisponível para novos cadastros ou logins. Por favor, tente novamente mais tarde.</p>
+            <button
+              onClick={() => setShowMaintenancePopup(false)}
+              className="bg-[#19c27c] hover:bg-[#15a86a] text-white font-bold py-3 px-8 rounded-lg text-sm uppercase tracking-widest"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Background Decoration */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#19c27c]/5 rounded-full blur-3xl"></div>
@@ -113,7 +113,7 @@ export default function StartConsultation() {
           )}
 
           {mode === 'login' && (
-            <form className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-500" onSubmit={handleLogin}>
+            <form className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-500" onSubmit={handleAuthAction}>
               <div className="space-y-2">
                 <label className="block text-sm font-semibold text-slate-700 ml-1">E-mail Corporativo</label>
                 <div className="relative group">
@@ -183,7 +183,7 @@ export default function StartConsultation() {
           )}
 
           {mode === 'register' && (
-            <form className="space-y-5 animate-in fade-in slide-in-from-bottom-2 duration-500" onSubmit={handleRegister}>
+            <form className="space-y-5 animate-in fade-in slide-in-from-bottom-2 duration-500" onSubmit={handleAuthAction}>
               <div className="space-y-1.5">
                 <label className="block text-sm font-semibold text-slate-700 ml-1">Nome Completo</label>
                 <div className="relative group">
@@ -269,7 +269,7 @@ export default function StartConsultation() {
                 </p>
               </div>
 
-              <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Link enviado!"); }}>
+              <form className="space-y-6" onSubmit={handleAuthAction}>
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-slate-700 ml-1">E-mail Corporativo</label>
                   <div className="relative group">

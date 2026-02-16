@@ -5,16 +5,12 @@ import { Terminal, Key, BadgeCheck, LogIn, ShieldAlert } from 'lucide-react';
 
 export default function AdminLogin() {
   const [isLoading, setIsLoading] = useState(false);
+  const [showMaintenancePopup, setShowMaintenancePopup] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    // Simulação de autenticação de terminal
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate('/admin/dashboard');
-    }, 1500);
+    setShowMaintenancePopup(true);
   };
 
   const bootLogs = [
@@ -29,6 +25,21 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-screen bg-[#111111] text-slate-300 font-mono flex items-center justify-center p-4 relative overflow-hidden antialiased">
+      {showMaintenancePopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-[#2F2F2F] border border-[#19C37D]/20 p-8 rounded-xl shadow-2xl text-center">
+            <h2 className="text-lg font-bold text-white mb-4">Sistema em Manutenção</h2>
+            <p className="text-slate-400 mb-6">O sistema está temporariamente indisponível. Por favor, tente novamente mais tarde.</p>
+            <button
+              onClick={() => setShowMaintenancePopup(false)}
+              className="bg-[#19C37D] hover:bg-[#15a86a] text-[#111111] font-bold py-2 px-4 rounded-lg text-sm uppercase tracking-widest"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Matrix-like Background Logs */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] overflow-hidden select-none flex flex-wrap gap-x-8 gap-y-4 p-4 text-[10px] leading-none">
         {Array.from({ length: 40 }).map((_, i) => (
