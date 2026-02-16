@@ -1,0 +1,356 @@
+# Query: ../
+# ContextLines: 1
+
+src/components/layout/Navigation.tsx:
+  3  import { NavLink } from 'react-router-dom';
+  4: import { NAV_ITEMS } from '@/constants';
+  5  
+
+src/pages/Governance.tsx:
+  2  import React from 'react';
+  3: import { DETAILED_PAGES } from '@/constants';
+  4  
+
+src/pages/OurTeam.tsx:
+  2  import React from 'react';
+  3: import { DETAILED_PAGES } from '@/constants';
+  4  
+
+src/pages/PressRoom.tsx:
+  2  import React from 'react';
+  3: import { DETAILED_PAGES } from '@/constants';
+  4  
+
+src/pages/Security.tsx:
+  2  import React from 'react';
+  3: import { DETAILED_PAGES } from '@/constants';
+  4  import { Lock } from 'lucide-react';
+
+src/pages/StartConsultation.tsx:
+  15  } from 'lucide-react';
+  16: import { createCoraCheckoutSession } from '@/services/coraService';
+  17  
+
+src/pages/admin/AdminActiveRooms.tsx:
+  4  import { Activity, RefreshCcw, Eye, Signal, Users } from 'lucide-react';
+  5: import AdminSidebar from '@/components/admin/AdminSidebar';
+  6  
+
+src/pages/admin/AdminDashboard.tsx:
+  3  import { Bell, Search, Timer, AlertTriangle, Cloud, Download, TrendingDown, Terminal, ShieldCheck } from 'lucide-react';
+  4: import AdminSidebar from '@/components/admin/AdminSidebar';
+  5  
+
+src/pages/admin/AdminRecordings.tsx:
+  3  import { Search, Filter, PlayCircle, Eye, Download, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
+  4: import AdminSidebar from '@/components/admin/AdminSidebar';
+  5  
+
+src/pages/admin/AdminScheduleMeeting.tsx:
+  4  import { X, Search, Video, ShieldCheck, Clock, CalendarCheck } from 'lucide-react';
+  5: import AdminSidebar from '@/components/admin/AdminSidebar';
+  6  
+
+src/pages/admin/AdminSessions.tsx:
+  4  import { Plus, ChevronLeft, ChevronRight, Video, Link2, Edit2, Trash2 } from 'lucide-react';
+  5: import AdminSidebar from '@/components/admin/AdminSidebar';
+  6  
+
+src/pages/admin/AdminSupportChat.tsx:
+  7  } from 'lucide-react';
+  8: import AdminSidebar from '@/components/admin/AdminSidebar';
+  9: import { chatService, ChatSession } from '@/services/chatService';
+  10  
+
+src/pages/client/ClientSupportChat.tsx:
+   8  } from 'lucide-react';
+   9: import ClientSidebar from '@/components/client/ClientSidebar';
+  10: import { chatService, Message } from '@/services/chatService';
+  11  
+
+src/pages/client/Dashboard.tsx:
+  14  } from 'lucide-react';
+  15: import ClientSidebar from '@/components/client/ClientSidebar';
+  16  
+
+src/pages/client/Invoices.tsx:
+  19  } from 'lucide-react';
+  20: import ClientSidebar from '@/components/client/ClientSidebar';
+  21  
+
+src/pages/client/Meeting.tsx:
+  15  } from 'lucide-react';
+  16: import ClientSidebar from '@/components/client/ClientSidebar';
+  17  
+
+src/pages/client/Projects.tsx:
+  14  } from 'lucide-react';
+  15: import ClientSidebar from '@/components/client/ClientSidebar';
+  16  
+
+src/pages/client/ScheduleCall.tsx:
+  14  } from 'lucide-react';
+  15: import ClientSidebar from '@/components/client/ClientSidebar';
+  16  
+
+src/pages/client/Settings.tsx:
+  13  } from 'lucide-react';
+  14: import ClientSidebar from '@/components/client/ClientSidebar';
+  15  
+
+src/pages/client/Support.tsx:
+  15  } from 'lucide-react';
+  16: import ClientSidebar from '@/components/client/ClientSidebar';
+  17  
+
+src/pages/client/TicketView.tsx:
+  19  } from 'lucide-react';
+  20: import ClientSidebar from '@/components/client/ClientSidebar';
+  21  
+
+src/pages/services/AIScaling.tsx:
+  2  import React from 'react';
+  3: import { DETAILED_PAGES } from '@/constants';
+  4  
+
+src/pages/services/CloudStrategy.tsx:
+  2  import React from 'react';
+  3: import { DETAILED_PAGES } from '@/constants';
+  4  
+
+src/pages/services/SystemsDesign.tsx:
+  2  import React from 'react';
+  3: import { DETAILED_PAGES } from '@/constants';
+  4  
+
+src/pages/services/TechAudit.tsx:
+  2  import React from 'react';
+  3: import { DETAILED_PAGES } from '@/constants';
+  4  
+
+teste/admin/AdminActiveRooms.tsx:
+  4  import { Activity, RefreshCcw, Eye, Signal, Users } from 'lucide-react';
+  5: import AdminSidebar from '@/components/admin/AdminSidebar';
+  6  
+
+teste/admin/AdminClients.tsx:
+  10  } from 'lucide-react';
+  11: import AdminSidebar from '@/components/admin/AdminSidebar';
+  12: import { clientService } from '@/services/client.service';
+  13  
+
+teste/admin/AdminDashboard.tsx:
+   7  } from 'lucide-react';
+   8: import AdminSidebar from '@/components/admin/AdminSidebar';
+   9  import { useNavigate } from 'react-router-dom';
+  10: import { api } from '@/services/api';
+  11  
+
+teste/admin/AdminDiagnostics.tsx:
+  10  } from 'lucide-react';
+  11: import AdminSidebar from '@/components/admin/AdminSidebar';
+  12  // Fix: Import from audit.service instead of deprecated diagnosticService
+  13: import { auditService as diagnosticService, TechnicalReport as DiagnosticReport } from '@/services/audit.service';
+  14  
+
+teste/admin/AdminDiagnosticsReport.tsx:
+  10  } from 'lucide-react';
+  11: import AdminSidebar from '@/components/admin/AdminSidebar';
+  12  
+
+teste/admin/AdminInfrastructure.tsx:
+  6  } from 'lucide-react';
+  7: import AdminSidebar from '@/components/admin/AdminSidebar';
+  8: import { useInfraSync } from '@/hooks/useInfraSync';
+  9  
+
+teste/admin/AdminLogin.tsx:
+  4  import { Terminal, Key, BadgeCheck, LogIn, ShieldAlert, AlertCircle } from 'lucide-react';
+  5: import { useAuth } from '@/context/AuthContext';
+  6  
+
+teste/admin/AdminMeetingSetup.tsx:
+  10  } from 'lucide-react';
+  11: import AdminSidebar from '@/components/admin/AdminSidebar';
+  12: import { clientDataService, Meeting } from '@/services/clientDataService';
+  13  
+
+teste/admin/AdminNewProject.tsx:
+   8  } from 'lucide-react';
+   9: import AdminSidebar from '@/components/admin/AdminSidebar';
+  10: import { projectService } from '@/services/project.service';
+  11: import { auditService } from '@/services/audit.service';
+  12: import { useAnalysisStream } from '@/hooks/useAnalysisStream';
+  13  
+
+teste/admin/AdminProjects.tsx:
+  6  } from 'lucide-react';
+  7: import AdminSidebar from '@/components/admin/AdminSidebar';
+  8: import { projectService } from '@/services/project.service';
+  9: import { Project } from '@/services/clientDataService';
+  10  
+
+teste/admin/AdminProposalGenerator.tsx:
+  7  } from 'lucide-react';
+  8: import AdminSidebar from '@/components/admin/AdminSidebar';
+  9: import { api } from '@/services/api';
+  10  
+
+teste/admin/AdminRecordings.tsx:
+  3  import { Search, Filter, PlayCircle, Eye, Download, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
+  4: import AdminSidebar from '@/components/admin/AdminSidebar';
+  5  
+
+teste/admin/AdminRepository.tsx:
+  10  } from 'lucide-react';
+  11: import AdminSidebar from '@/components/admin/AdminSidebar';
+  12: import { repositoryService } from '@/services/repository.service';
+  13  
+
+teste/admin/AdminScheduleMeeting.tsx:
+  4  import { X, Search, Video, ShieldCheck, Clock, CalendarCheck } from 'lucide-react';
+  5: import AdminSidebar from '@/components/admin/AdminSidebar';
+  6: import { clientDataService } from '@/services/clientDataService';
+  7  
+
+teste/admin/AdminSessions.tsx:
+  4  import { Plus, ChevronLeft, ChevronRight, Video, Link2, Edit2, Trash2 } from 'lucide-react';
+  5: import AdminSidebar from '@/components/admin/AdminSidebar';
+  6: import { clientDataService, Meeting } from '@/services/clientDataService';
+  7  
+
+teste/admin/AdminSupportChat.tsx:
+  6  } from 'lucide-react';
+  7: import AdminSidebar from '@/components/admin/AdminSidebar';
+  8: import { chatService } from '@/services/chatService';
+  9: import { useChatSync } from '@/hooks/useChatSync';
+  10  
+
+teste/admin/AdminTickets.tsx:
+   9  } from 'lucide-react';
+  10: import AdminSidebar from '@/components/admin/AdminSidebar';
+  11: import { ticketService } from '@/services/ticket.service';
+  12  
+
+teste/client/AuditResult.tsx:
+   9  } from 'lucide-react';
+  10: import ClientSidebar from '@/components/client/ClientSidebar';
+  11: import { clientDataService, Project } from '@/services/clientDataService';
+  12  
+
+teste/client/ClientNewProject.tsx:
+   7  } from 'lucide-react';
+   8: import ClientSidebar from '@/components/client/ClientSidebar';
+   9: import { projectService } from '@/services/project.service';
+  10: import { auditService } from '@/services/audit.service';
+  11  
+
+teste/client/ClientProposals.tsx:
+  7  } from 'lucide-react';
+  8: import ClientSidebar from '@/components/client/ClientSidebar';
+  9  
+
+teste/client/ClientSupportChat.tsx:
+   8  } from 'lucide-react';
+   9: import ClientSidebar from '@/components/client/ClientSidebar';
+  10: import { chatService, Message } from '@/services/chatService';
+  11: import { useChatSync } from '@/hooks/useChatSync';
+  12  
+
+teste/client/ConsultationCheckout.tsx:
+   7  } from 'lucide-react';
+   8: import ClientSidebar from '@/components/client/ClientSidebar';
+   9: import { auditService, TechnicalReport } from '@/services/audit.service';
+  10: import { projectService } from '@/services/project.service';
+  11  
+
+teste/client/ConsultationTypeSelection.tsx:
+  4  import { Headset, Cpu, ArrowRight, ShieldCheck, Zap, Globe, Lock } from 'lucide-react';
+  5: import ClientSidebar from '@/components/client/ClientSidebar';
+  6  
+
+teste/client/Dashboard.tsx:
+  6  } from 'lucide-react';
+  7: import ClientSidebar from '@/components/client/ClientSidebar';
+  8: import { api } from '@/services/api';
+  9: import { Project } from '@/services/clientDataService';
+  10  
+
+teste/client/DetailedReport.tsx:
+  11  } from 'lucide-react';
+  12: import ClientSidebar from '@/components/client/ClientSidebar';
+  13: import { clientDataService, Project } from '@/services/clientDataService';
+  14  
+
+teste/client/DiagnosticDetail.tsx:
+   8  } from 'lucide-react';
+   9: import ClientSidebar from '@/components/client/ClientSidebar';
+  10: import { auditService as diagnosticService, TechnicalReport as DiagnosticReport } from '@/services/audit.service';
+  11  
+
+teste/client/DiagnosticHistory.tsx:
+  4  import { Activity, Unlock, Lock, ChevronRight, Search, Zap, Clock, AlertTriangle, RefreshCcw } from 'lucide-react';
+  5: import ClientSidebar from '@/components/client/ClientSidebar';
+  6: import { auditService, TechnicalReport } from '@/services/audit.service';
+  7  
+
+teste/client/Invoices.tsx:
+  12  } from 'lucide-react';
+  13: import ClientSidebar from '@/components/client/ClientSidebar';
+  14: import { clientDataService, InvoiceResponse } from '@/services/clientDataService';
+  15  
+
+teste/client/Meeting.tsx:
+  7  } from 'lucide-react';
+  8: import ClientSidebar from '@/components/client/ClientSidebar';
+  9: import { clientDataService, Meeting as MeetingType } from '@/services/clientDataService';
+  10  
+
+teste/client/ProjectDetail.tsx:
+   9  } from 'lucide-react';
+  10: import ClientSidebar from '@/components/client/ClientSidebar';
+  11: import { clientDataService, Project } from '@/services/clientDataService';
+  12  
+
+teste/client/Projects.tsx:
+  15  } from 'lucide-react';
+  16: import ClientSidebar from '@/components/client/ClientSidebar';
+  17: import { clientDataService, Project } from '@/services/clientDataService';
+  18  
+
+teste/client/ScheduleCall.tsx:
+   9  } from 'lucide-react';
+  10: import ClientSidebar from '@/components/client/ClientSidebar';
+  11: import { clientDataService } from '@/services/clientDataService';
+  12  
+
+teste/client/Settings.tsx:
+  11  } from 'lucide-react';
+  12: import ClientSidebar from '@/components/client/ClientSidebar';
+  13  
+
+teste/client/Support.tsx:
+  7  } from 'lucide-react';
+  8: import ClientSidebar from '@/components/client/ClientSidebar';
+  9: import { clientDataService, Ticket } from '@/services/clientDataService';
+  10  
+
+teste/client/TicketView.tsx:
+  19  } from 'lucide-react';
+  20: import ClientSidebar from '@/components/client/ClientSidebar';
+  21  
+
+teste/components/layout/Footer.tsx:
+  4  import { Linkedin, Github, Youtube, ShieldCheck, Lock } from 'lucide-react';
+  5: import { SERVICES, CORPORATE_LINKS, GOVERNANCE_LINKS, YOUTUBE_URL } from '@/constants';
+  6  
+
+teste/components/layout/Header.tsx:
+  5  import Navigation from './Navigation';
+  6: import { CALENDLY_URL } from '@/constants';
+  7  
+
+teste/components/layout/Navigation.tsx:
+  3  import { NavLink } from 'react-router-dom';
+  4: import { NAV_ITEMS } from '@/constants';
+  5  

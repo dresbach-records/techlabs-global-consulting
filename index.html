@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -22,13 +21,13 @@
     
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="DRESBACH HOSTING" />
     <link rel="apple-touch-icon" href="/favicon.ico" />
-    <link rel="manifest" href="./manifest.json" />
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -45,7 +44,6 @@
         -moz-user-select: none;
         -ms-user-select: none;
       }
-      /* Pre-loader para evitar tela branca enquanto o React carrega */
       #initial-loader {
         position: fixed;
         inset: 0;
@@ -66,35 +64,10 @@
         animation: spin 1s linear infinite;
       }
       @keyframes spin { to { transform: rotate(360deg); } }
-      
-      .font-mono { font-family: 'JetBrains Mono', monospace; }
-      .font-display { font-family: 'Space Grotesk', sans-serif; }
-      .grid-pattern {
-        background-image: radial-gradient(#2F2F2F 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #000000; }
-      ::-webkit-scrollbar-thumb { background: #2F2F2F; border-radius: 10px; }
-      ::-webkit-scrollbar-thumb:hover { background: #19C37D; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react-dom": "https://esm.sh/react-dom@^19.2.4",
-    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.2.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.564.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+  </head>
   <body>
-    <!-- Elemento que garante que o usuário não veja uma tela branca vazia -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="initial-loader">
       <div class="spinner"></div>
       <div style="margin-top: 20px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3em; color: #19C37D;">
@@ -104,31 +77,32 @@
 
     <div id="root"></div>
 
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="/src/index.tsx"></script>
 
     <script>
-      // Desabilitar clique com o botão direito
       document.addEventListener('contextmenu', event => event.preventDefault());
 
-      // Registro do Service Worker com caminho relativo './'
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js', { scope: './' })
-            .then(reg => console.log('SW Registered successfully for scope:', reg.scope))
-            .catch(err => {
-              console.warn('SW Registration Failed (Expected in some sandboxes):', err.message);
-            });
-        });
-      }
-
-      // Remover loader quando o app estiver pronto
-      window.addEventListener('DOMContentLoaded', () => {
+      // Hide loader only when React app is fully loaded
+      window.addEventListener('load', () => {
         setTimeout(() => {
           const loader = document.getElementById('initial-loader');
-          if (loader) loader.style.opacity = '0';
-          setTimeout(() => loader?.remove(), 500);
+          if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => loader.remove(), 500);
+          }
         }, 1000);
       });
+
+      // Your suggested fallback script
+      setTimeout(() => {
+        const root = document.getElementById('root');
+        const loader = document.getElementById('initial-loader');
+
+        if (root && !root.hasChildNodes() && loader) {
+          loader.innerHTML = '<p style="color:#ff5555;font-size:12px;font-family:monospace;text-align:center;">Error: Application failed to load.<br>Please contact support.</p>';
+          loader.style.opacity = '1';
+        }
+      }, 5000); // Check after 5 seconds
     </script>
   </body>
 </html>

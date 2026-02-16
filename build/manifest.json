@@ -1,0 +1,25 @@
+
+{
+  "name": "TechLabs Global",
+  "short_name": "TechLabs",
+  "description": "Consultoria Técnica de Elite - Dresbach Group",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#19C37D",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/9374/9374944.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/9374/9374944.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "technology"]
+}
