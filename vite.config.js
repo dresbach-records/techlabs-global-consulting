@@ -1,9 +1,12 @@
+
 import { defineConfig } from 'vite';
-import javascriptObfuscator from 'vite-plugin-javascript-obfuscator';
+import react from '@vitejs/plugin-react';
+import obfuscator from 'vite-plugin-javascript-obfuscator';
 
 export default defineConfig({
   plugins: [
-    javascriptObfuscator({
+    react(),
+    obfuscator({
       options: {
         compact: true,
         stringArray: true
