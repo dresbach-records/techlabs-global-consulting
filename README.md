@@ -1,3 +1,5 @@
+![Dresbach Hosting Cover](public/Logo_Dresbach.png)
+
 # DRESBACH HOSTING — Global Web Hosting
 
 Enterprise institutional website for **DRESBACH HOSTING**, the web hosting and cloud services brand of the **Dresbach Group (Canada)**.
