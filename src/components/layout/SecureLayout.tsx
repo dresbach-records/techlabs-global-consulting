@@ -2,8 +2,12 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-// Função para determinar se uma rota é protegida
 const isProtectedRoute = (pathname: string) => {
+  // Rotas de teste nunca são protegidas
+  if (pathname.startsWith('/test/')) {
+    return false;
+  }
+
   // Áreas do cliente são protegidas
   if (pathname.startsWith('/client/')) {
     return true;
@@ -12,11 +16,6 @@ const isProtectedRoute = (pathname: string) => {
   // A área de administração é protegida, exceto a página de login
   if (pathname.startsWith('/admin/')) {
     return pathname !== '/admin/login';
-  }
-
-  // As rotas de teste são protegidas, exceto o login de teste
-  if (pathname.startsWith('/test/')) {
-    return pathname !== '/test/login';
   }
 
   // Todas as outras rotas são públicas
@@ -32,9 +31,7 @@ const SecureLayout = ({ children }: { children: React.ReactNode }) => {
     const needsAuth = isProtectedRoute(location.pathname);
 
     if (needsAuth && !token) {
-      // Se a rota é protegida e não há token, redireciona para o login
-      // Redireciona para o login de admin se for uma rota de admin/teste, caso contrário para o login do cliente
-      if (location.pathname.startsWith('/admin/') || location.pathname.startsWith('/test/')) {
+      if (location.pathname.startsWith('/admin/')) {
         navigate('/admin/login');
       } else {
         navigate('/start-consultation');

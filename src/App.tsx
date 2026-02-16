@@ -57,7 +57,8 @@ import AdminSupportChat from '@/pages/admin/AdminSupportChat';
 import JoinMeeting from '@/pages/JoinMeeting';
 import { MessageSquare, Cpu, X, Send, ShieldAlert, Home as HomeIcon, Headset } from 'lucide-react';
 import { getBriefingAdvice } from '@/services/geminiService';
-import { chatService } from '@/services/chatService';
+import { chatService, ChatSession } from '@/services/chatService';
+import { ChatMessage } from '@/types';
 import Success from '@/pages/checkout/Success';
 import Cancelled from '@/pages/checkout/Cancelled';
 import Error from '@/pages/checkout/Error';
@@ -79,13 +80,13 @@ export default function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const [chatOpen, setChatOpen] = useState(false);
-  const [chatMessages, setChatMessages] = useState<{role: 'user' | 'ai' | 'admin', text: string}[]>([]);
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [userInput, setUserInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [isLiveAgent, setIsLiveAgent] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
-  const isUnderMaintenance = MAINTENANCE_MODE && location.pathname !== '/test/login';
+  const isUnderMaintenance = MAINTENANCE_MODE && !location.pathname.startsWith('/test/');
 
   const isAuthPage = location.pathname === '/start-consultation' || location.pathname === '/join-meeting';
   const isAdminPage = location.pathname.startsWith('/admin') || location.pathname.startsWith('/test');
@@ -105,14 +106,14 @@ export default function App() {
 
   useEffect(() => {
     if (isLiveAgent) {
-      const unsubscribe = chatService.subscribe((sessions: any) => {
+      const unsubscribe = chatService.subscribe((sessions: Record<string, ChatSession>) => {
         const session = sessions['PUBLIC-WEB'];
         if (session) {
-          const formattedMessages = session.messages.map((m: any) => ({
-            role: (m.isAdmin ? 'admin' : 'user') as 'admin' | 'user',
+          const formattedMessages: ChatMessage[] = session.messages.map(m => ({
+            role: m.isAdmin ? 'admin' : 'user',
             text: m.text
           }));
-          setChatMessages(formattedMessages as any);
+          setChatMessages(formattedMessages);
         }
       });
       return unsubscribe;
