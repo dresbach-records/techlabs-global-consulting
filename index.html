@@ -26,6 +26,10 @@
         color: #EDEDED;
         margin: 0;
         padding: 0;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
       }
       /* Pre-loader para evitar tela branca enquanto o React carrega */
       #initial-loader {
@@ -89,6 +93,9 @@
     <script type="module" src="./index.tsx"></script>
 
     <script>
+      // Desabilitar clique com o botão direito
+      document.addEventListener('contextmenu', event => event.preventDefault());
+
       // Registro do Service Worker com caminho relativo './'
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
@@ -109,6 +116,5 @@
         }, 1000);
       });
     </script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+  </body>
 </html>
